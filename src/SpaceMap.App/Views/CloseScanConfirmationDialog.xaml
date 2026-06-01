@@ -7,6 +7,6 @@
             BorderThickness="1"
             CornerRadius="14"
             Visibility="{Binding ScanWorkspace.HasActiveScan, Converter={StaticResource BoolToVisibilityConverter}}">
-        <TextBlock Text="Si cierras con un escaneo activo, se pedira confirmacion y se preservaran solo los resultados confirmados." TextWrapping="Wrap" />
+        <TextBlock Text="Closing with an active scan will ask for confirmation and preserve only confirmed results." TextWrapping="Wrap" />
     </Border>
 </UserControl>

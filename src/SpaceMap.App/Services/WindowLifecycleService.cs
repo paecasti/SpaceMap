@@ -14,8 +14,8 @@ public sealed class WindowLifecycleService(WindowCloseGuard closeGuard)
 
         var result = MessageBox.Show(
             owner,
-            "Hay un escaneo activo. Si cierras ahora, se cancelara el trabajo en curso y se mantendran solo los resultados ya confirmados.",
-            "Cerrar con escaneo activo",
+            "A scan is currently running. Closing now will cancel the active work and keep only the results that were already confirmed.",
+            "Close with active scan",
             MessageBoxButton.YesNo,
             MessageBoxImage.Warning,
             MessageBoxResult.No);

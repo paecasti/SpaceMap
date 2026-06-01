@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Border Padding="10" Background="#F7F4EE" CornerRadius="12">
         <StackPanel Orientation="Horizontal">
-            <Button Command="{Binding OpenSelectedPathCommand}" Content="Abrir seleccionado" />
-            <Button Margin="8,0,0,0" Command="{Binding CopySelectedPathCommand}" Content="Copiar seleccionado" />
+            <Button Command="{Binding OpenSelectedPathCommand}" Content="Open selected" />
+            <Button Margin="8,0,0,0" Command="{Binding CopySelectedPathCommand}" Content="Copy selected" />
         </StackPanel>
     </Border>
 </UserControl>
