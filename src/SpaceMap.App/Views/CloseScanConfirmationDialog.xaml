@@ -1,0 +1,12 @@
+<UserControl x:Class="SpaceMap.App.Views.CloseScanConfirmationDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border Padding="12"
+            Background="#FDE7E4"
+            BorderBrush="#D68A7D"
+            BorderThickness="1"
+            CornerRadius="14"
+            Visibility="{Binding ScanWorkspace.HasActiveScan, Converter={StaticResource BoolToVisibilityConverter}}">
+        <TextBlock Text="Si cierras con un escaneo activo, se pedira confirmacion y se preservaran solo los resultados confirmados." TextWrapping="Wrap" />
+    </Border>
+</UserControl>

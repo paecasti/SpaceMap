@@ -1,0 +1,12 @@
+<UserControl x:Class="SpaceMap.App.Views.RestoredSnapshotBanner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border Padding="12"
+            Background="#FFF3D6"
+            BorderBrush="#D9B45D"
+            BorderThickness="1"
+            CornerRadius="14"
+            Visibility="{Binding RestoredSnapshotBanner.IsVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+        <TextBlock FontWeight="SemiBold" Text="{Binding RestoredSnapshotBanner.Message}" TextWrapping="Wrap" />
+    </Border>
+</UserControl>

@@ -1,0 +1,64 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{82875608-6850-425F-8071-477E1F807465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceMap.App", "src\SpaceMap.App\SpaceMap.App.csproj", "{1233EE69-4E55-469F-ABCD-EB2BBF72A82A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceMap.Core", "src\SpaceMap.Core\SpaceMap.Core.csproj", "{69430EC4-0744-4511-85E9-9724E6BB3920}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceMap.Infrastructure", "src\SpaceMap.Infrastructure\SpaceMap.Infrastructure.csproj", "{40CBD1A3-73EE-4D31-957D-36D58D314C5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2D570D2E-1DED-4CD4-BCE0-94C8769225B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceMap.Core.Tests", "tests\SpaceMap.Core.Tests\SpaceMap.Core.Tests.csproj", "{966AE906-C2A4-4174-A21D-1A4BC54DC7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceMap.Integration.Tests", "tests\SpaceMap.Integration.Tests\SpaceMap.Integration.Tests.csproj", "{042C5CC5-A46B-46D0-990E-C10D3814A077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceMap.Desktop.Tests", "tests\SpaceMap.Desktop.Tests\SpaceMap.Desktop.Tests.csproj", "{03C6F612-44E4-4FE8-AC45-30B54400A057}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1233EE69-4E55-469F-ABCD-EB2BBF72A82A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1233EE69-4E55-469F-ABCD-EB2BBF72A82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1233EE69-4E55-469F-ABCD-EB2BBF72A82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1233EE69-4E55-469F-ABCD-EB2BBF72A82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69430EC4-0744-4511-85E9-9724E6BB3920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69430EC4-0744-4511-85E9-9724E6BB3920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69430EC4-0744-4511-85E9-9724E6BB3920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69430EC4-0744-4511-85E9-9724E6BB3920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40CBD1A3-73EE-4D31-957D-36D58D314C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40CBD1A3-73EE-4D31-957D-36D58D314C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40CBD1A3-73EE-4D31-957D-36D58D314C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40CBD1A3-73EE-4D31-957D-36D58D314C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966AE906-C2A4-4174-A21D-1A4BC54DC7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966AE906-C2A4-4174-A21D-1A4BC54DC7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966AE906-C2A4-4174-A21D-1A4BC54DC7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966AE906-C2A4-4174-A21D-1A4BC54DC7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042C5CC5-A46B-46D0-990E-C10D3814A077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042C5CC5-A46B-46D0-990E-C10D3814A077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042C5CC5-A46B-46D0-990E-C10D3814A077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042C5CC5-A46B-46D0-990E-C10D3814A077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C6F612-44E4-4FE8-AC45-30B54400A057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C6F612-44E4-4FE8-AC45-30B54400A057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C6F612-44E4-4FE8-AC45-30B54400A057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C6F612-44E4-4FE8-AC45-30B54400A057}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1233EE69-4E55-469F-ABCD-EB2BBF72A82A} = {82875608-6850-425F-8071-477E1F807465}
+		{69430EC4-0744-4511-85E9-9724E6BB3920} = {82875608-6850-425F-8071-477E1F807465}
+		{40CBD1A3-73EE-4D31-957D-36D58D314C5F} = {82875608-6850-425F-8071-477E1F807465}
+		{966AE906-C2A4-4174-A21D-1A4BC54DC7B6} = {2D570D2E-1DED-4CD4-BCE0-94C8769225B9}
+		{042C5CC5-A46B-46D0-990E-C10D3814A077} = {2D570D2E-1DED-4CD4-BCE0-94C8769225B9}
+		{03C6F612-44E4-4FE8-AC45-30B54400A057} = {2D570D2E-1DED-4CD4-BCE0-94C8769225B9}
+	EndGlobalSection
+EndGlobal

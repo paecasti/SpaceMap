@@ -1,0 +1,104 @@
+<UserControl x:Class="SpaceMap.App.Views.ScanWorkspaceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:SpaceMap.App.Controls"
+             xmlns:views="clr-namespace:SpaceMap.App.Views">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Padding="18" CornerRadius="20" Background="#173F35">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock FontSize="28" FontWeight="Bold" Foreground="#F4F1E8" Text="SpaceMap" />
+                    <TextBlock Margin="0,6,0,0" Foreground="#D9E5DE" Text="Replica desktop en .NET 8: lectura segura, resultados progresivos y restore automatico." />
+                    <DockPanel Margin="0,16,0,0">
+                        <TextBox Width="420" Text="{Binding ScanWorkspace.ScopePath, UpdateSourceTrigger=PropertyChanged}" />
+                        <Button Margin="10,0,0,0" Padding="16,8" Command="{Binding StartScanCommand}" Content="Iniciar escaneo" />
+                        <Button Margin="10,0,0,0" Padding="16,8" Command="{Binding CancelScanCommand}" Content="Cancelar" />
+                        <Button Margin="10,0,0,0" Padding="16,8" Command="{Binding RefreshCommand}" Content="Refrescar" />
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                    <TextBlock HorizontalAlignment="Right" Foreground="#B9D2C8" Text="Windows Desktop" />
+                    <TextBlock HorizontalAlignment="Right" FontSize="24" FontWeight="SemiBold" Foreground="#F4F1E8" Text="{Binding ScanWorkspace.StatusText}" />
+                    <TextBlock HorizontalAlignment="Right" Foreground="#F4F1E8" Text="{Binding ScanWorkspace.EntriesProcessed, StringFormat='Entries: {0:N0}'}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Row="1" Margin="0,14,0,0">
+            <views:RestoredSnapshotBanner />
+            <views:ScanProgressPanel Margin="0,10,0,0" />
+            <views:NavigationBreadcrumb Margin="0,10,0,0" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" Margin="0,16,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.1*" />
+                <ColumnDefinition Width="1.4*" />
+                <ColumnDefinition Width="0.9*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Margin="0,0,12,0" Padding="14" Background="#FAFAF6" BorderBrush="#D8D3C8" BorderThickness="1" CornerRadius="18">
+                <StackPanel>
+                    <TextBlock FontSize="18" FontWeight="SemiBold" Text="Treemap raiz" />
+                    <controls:TreemapControl Margin="0,12,0,0"
+                                             ItemsSource="{Binding ResultsSummary.TopItems}"
+                                             SelectedItem="{Binding Results.SelectedItem, Mode=TwoWay}">
+                        <controls:TreemapControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Margin="0,0,0,8"
+                                        Padding="12"
+                                        Command="{Binding DataContext.NavigateCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding Path}"
+                                        Background="#2E7D6D"
+                                        Foreground="White">
+                                    <StackPanel>
+                                        <TextBlock FontWeight="SemiBold" Text="{Binding Path}" TextWrapping="Wrap" />
+                                        <TextBlock Margin="0,4,0,0" Text="{Binding RealSizeBytes, StringFormat='Real: {0:N0} bytes'}" />
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </controls:TreemapControl.ItemTemplate>
+                    </controls:TreemapControl>
+                    <views:ResultsSummaryView Margin="0,12,0,0" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Margin="0,0,12,0" Padding="14" Background="#FFFFFF" BorderBrush="#D8D3C8" BorderThickness="1" CornerRadius="18">
+                <StackPanel>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock FontSize="18" FontWeight="SemiBold" Text="Desglose del directorio" />
+                        <Button Margin="8,0,0,0" Command="{Binding SetRealSortCommand}" Content="Real" />
+                        <Button Margin="8,0,0,0" Command="{Binding SetLogicalSortCommand}" Content="Logical" />
+                        <Button Margin="8,0,0,0" Command="{Binding SetNameSortCommand}" Content="Nombre" />
+                    </DockPanel>
+                    <views:DirectoryBreakdownView Margin="0,12,0,0" />
+                    <views:ResultsContextMenu Margin="0,8,0,0" />
+                </StackPanel>
+            </Border>
+
+            <StackPanel Grid.Column="2">
+                <views:OmittedItemsPanel />
+                <views:NativeActionToast Margin="0,12,0,0" />
+                <views:CloseScanConfirmationDialog Margin="0,12,0,0" />
+            </StackPanel>
+        </Grid>
+
+        <DockPanel Grid.Row="3" Margin="0,16,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Button Padding="16,8" Command="{Binding OpenSelectedPathCommand}" Content="Abrir ruta" />
+                <Button Margin="10,0,0,0" Padding="16,8" Command="{Binding CopySelectedPathCommand}" Content="Copiar ruta" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

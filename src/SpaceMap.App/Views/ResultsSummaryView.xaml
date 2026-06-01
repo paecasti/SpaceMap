@@ -1,0 +1,27 @@
+<UserControl x:Class="SpaceMap.App.Views.ResultsSummaryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <TextBlock FontSize="18" FontWeight="SemiBold" Text="Primeros hallazgos" />
+        <ListBox Margin="0,8,0,0"
+                 ItemsSource="{Binding ResultsSummary.TopItems}"
+                 SelectedItem="{Binding Results.SelectedItem, Mode=TwoWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Margin="0,0,0,6">
+                        <Button Width="26"
+                                Height="26"
+                                Margin="0,0,8,0"
+                                Command="{Binding DataContext.NavigateCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding Path}"
+                                Content=">" />
+                        <StackPanel>
+                            <TextBlock FontWeight="SemiBold" Text="{Binding Path}" TextWrapping="Wrap" />
+                            <TextBlock Text="{Binding RealSizeBytes, StringFormat='Real: {0:N0} bytes'}" />
+                        </StackPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</UserControl>
