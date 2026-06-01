@@ -1,18 +1,52 @@
-bin/
-obj/
-.vs/
-*.user
-*.suo
-packages/
-TestResults/
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 artifacts/
 publish/
 
-*.log
-*.tmp
-*.swp
+# .NET and NuGet
+project.lock.json
+project.fragment.lock.json
+packages/
+*.nupkg
+*.snupkg
 
-.DS_Store
-Thumbs.db
+# IDE and local user files
+.vs/
+*.user
+*.suo
 .vscode/
 .idea/
+
+# Test results and coverage
+[Tt]est[Rr]esult*/
+CodeCoverage/
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Logs and temporary files
+*.log
+*.binlog
+*.tmp
+*.swp
+~$*
+*~
+
+# Environment and OS files
+.env
+.env*
+.DS_Store
+Thumbs.db

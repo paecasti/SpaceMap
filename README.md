@@ -1,15 +1,15 @@
 # SpaceMap
 
-Aplicacion desktop para analizar visualmente el uso de disco en Windows usando .NET 8 y WPF.
+Desktop app to map the space used on your disk. SpaceMap is a Windows desktop application built with .NET 8 and WPF for visual disk-usage analysis.
 
 ## Workspace
 
-- `src/SpaceMap.App`: shell WPF, vistas y view models.
-- `src/SpaceMap.Core`: dominio, DTOs y casos de uso.
-- `src/SpaceMap.Infrastructure`: escaneo, persistencia, observabilidad y shell nativo.
-- `tests/`: pruebas core, integración y desktop.
+- `src/SpaceMap.App`: WPF shell, views, and view models.
+- `src/SpaceMap.Core`: domain models, DTOs, and use cases.
+- `src/SpaceMap.Infrastructure`: scanning, persistence, observability, and native shell services.
+- `tests/`: core, integration, and desktop tests.
 
-## Comandos
+## Commands
 
 ```powershell
 dotnet restore
